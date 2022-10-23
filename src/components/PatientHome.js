@@ -89,14 +89,6 @@ function PatientHome() {
         <Modal.Body>
           <PatientForm modalObj={modalObj} />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant='secondary' onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button className='ThemeButton' onClick={handleClose}>
-            Add
-          </Button>
-        </Modal.Footer>
       </Modal>
     </div>
   );
