@@ -1,7 +1,6 @@
-import React, { useState, useContext } from "react";
-import Footer from "./Footer";
-import "../styles/Form.css";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import "../styles/Form.css";
 
 const Form = ({ setScreen }) => {
   const authContext = useContext(AuthContext);
@@ -22,14 +21,14 @@ const Form = ({ setScreen }) => {
       const response = await fetch(url, settings);
       const result = await response.json();
       if (result.status) {
-        console.log(result.data)
+        console.log(result.data);
         authContext.updateUser(result.data);
       }
     } catch (e) {
       console.log(e);
     }
 
-   /*  authContext.updateUser({
+    /*  authContext.updateUser({
       name: "Jerry Driskill",
       role: "Doctor",
       appointments: {
@@ -51,44 +50,25 @@ const Form = ({ setScreen }) => {
         authContext.updateUser({});
       }, 10000);
     }); */
-    setScreen('doctor')
+    setScreen("doctor");
   };
 
   return (
-    <div className='Form'>
-      <p className='Label'>ID</p>
+    <div className="Form">
+      <p className="Label">ID</p>
       <input
-        className='InputField'
+        className="InputField"
         onChange={(e) => setSignupInfo({ ...signupInfo, id: e.target.value })}
       />
-      <p className='Label'>User Type</p>
-      <select className='InputField'>
-        <option
-          value='patient'
-          onChange={(e) =>
-            setSignupInfo({ ...signupInfo, role: e.target.value })
-          }
-        >
-          Patient
-        </option>
-        <option
-          value='doctor'
-          onChange={(e) =>
-            setSignupInfo({ ...signupInfo, role: e.target.value })
-          }
-        >
-          Doctor
-        </option>
-      </select>
-      <p className='Label'>Password</p>
+      <p className="Label">Password</p>
       <input
-        className='InputField'
-        type={'password'}
+        className="InputField"
+        type={"password"}
         onChange={(e) =>
           setSignupInfo({ ...signupInfo, password: e.target.value })
         }
       />
-      <button onClick={signUp} type='button' className='Button'>
+      <button onClick={signUp} type="button" className="Button">
         Submit
       </button>
     </div>
