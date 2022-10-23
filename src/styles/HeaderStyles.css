@@ -1,0 +1,14 @@
+.logo {
+  width: 153px;
+  height: 42px;
+}
+
+.header-background {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  padding-left: 36px;
+  object-fit: contain;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  display: flex;
+}
