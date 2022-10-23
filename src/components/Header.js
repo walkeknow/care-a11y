@@ -61,7 +61,8 @@ const DictionaryForm = () => {
 };
 
 const HeaderRight = ({ screen, handleShow, setScreen }) => {
-  if (screen === "doctor") {
+  console.log(screen)
+    if (screen === "doctor") {
     return <RightBarDoctor setOpen={handleShow} setScreen={setScreen} />;
   } else if (screen === "patient") {
     return <RightBarPatient setScreen={setScreen} />;

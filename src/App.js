@@ -41,7 +41,7 @@ function App() {
   return (
     <div className='App'>
       <AuthProvider>
-        <Header {...screen}></Header>
+        <Header {...{screen, setScreen}}></Header>
         <Body {...{ screen, setScreen }}></Body>
         <Footer />
       </AuthProvider>
