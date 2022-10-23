@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { AuthProvider } from "./contexts/AuthContext";
 import "./App.css";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const fetchData = async () => {
   const url = "https://infinite-sands-83108.herokuapp.com/login";
@@ -33,15 +34,17 @@ const fetchData = async () => {
 function App() {
   const [screen, setScreen] = useState("doctor");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
-    <div className="App">
-      <Header {...{ screen, setScreen }}></Header>
-      <Body {...{ screen, setScreen }}></Body>
-      <Footer />
+    <div className='App'>
+      <AuthProvider>
+        <Header {...screen}></Header>
+        <Body {...{ screen, setScreen }}></Body>
+        <Footer />
+      </AuthProvider>
     </div>
   );
 }
