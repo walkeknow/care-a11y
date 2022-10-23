@@ -22,36 +22,38 @@ const Form = ({ setScreen }) => {
       const response = await fetch(url, settings);
       const result = await response.json();
       if (result.status) {
-        console.log(result.data)
         authContext.updateUser(result.data);
       }
+      setScreen(result.data.role);
     } catch (e) {
       console.log(e);
     }
 
-   /*  authContext.updateUser({
-      name: "Jerry Driskill",
-      role: "Doctor",
-      appointments: {
-        appointment_id: 123,
-        subject_id: 10011,
-        doctor_id: 10000,
-        date: "10/20/2022",
-        tranformed_general_notes: "sample notes",
-        tranformed_diagnosis_notes: "sample notes",
-        tranformed_procedure_notes: "sample notes",
-        general_notes: "sample notes",
-        diagnosis_notes: "sample notes",
-        procedure_notes: "sample notes",
-      },
-    });
-    console.log('mock: ', authContext.user);
-    authContext.updateExpired(() => {
-      setTimeout(() => {
-        authContext.updateUser({});
-      }, 10000);
-    }); */
-    setScreen('doctor')
+    // authContext.updateUser({
+    //   name: "Jerry Driskill",
+    //   role: "Doctor",
+    //   appointments: [
+    //     {
+    //       appointment_id: 123,
+    //       subject_id: 10011,
+    //       doctor_id: 10000,
+    //       date: "10/20/2022",
+    //       tranformed_general_notes: "sample notes",
+    //       tranformed_diagnosis_notes: "sample notes",
+    //       tranformed_procedure_notes: "sample notes",
+    //       general_notes: "sample notes",
+    //       diagnosis_notes: "sample notes",
+    //       procedure_notes: "sample notes",
+    //     },
+    //   ],
+    // });
+    // console.log("mock: ", authContext.user);
+    // authContext.updateExpired(() => {
+    //   setTimeout(() => {
+    //     authContext.updateUser({});
+    //   }, 10000);
+    // });
+    // setScreen("doctor");
   };
 
   return (
@@ -83,7 +85,7 @@ const Form = ({ setScreen }) => {
       <p className='Label'>Password</p>
       <input
         className='InputField'
-        type={'password'}
+        type={"password"}
         onChange={(e) =>
           setSignupInfo({ ...signupInfo, password: e.target.value })
         }

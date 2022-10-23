@@ -11,14 +11,9 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [expired, setExpired] = useState(null);
 
-  console.log('User', user)
-
   const value = {
     user: user,
-    updateUser: (usr) => {
-      console.log("auth context: ", usr)
-      return setUser({...usr})
-    },
+    updateUser: (usr) => setUser(usr),
     expired: expired,
     updateExpired: (func) => setExpired(func),
   };

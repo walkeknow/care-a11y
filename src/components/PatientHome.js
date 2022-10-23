@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 import "../styles/PatientHome.css";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -28,23 +29,23 @@ const AppList = [
 
 const PatientForm = () => {
   return (
-    <div className="PatientForm">
-      <p className="Label">Diagnosis Note</p>
-      <textarea readOnly="readOnly" className="GeneralNotes" />
-      <p className="Label ">Procedure Note</p>
-      <textarea readOnly="readOnly" className="GeneralNotes" />
-      <p className="Label ">General Note</p>
-      <textarea readOnly="readOnly" className="GeneralNotes" />
+    <div className='PatientForm'>
+      <p className='Label'>Diagnosis Note</p>
+      <textarea readOnly='readOnly' className='GeneralNotes' />
+      <p className='Label '>Procedure Note</p>
+      <textarea readOnly='readOnly' className='GeneralNotes' />
+      <p className='Label '>General Note</p>
+      <textarea readOnly='readOnly' className='GeneralNotes' />
     </div>
   );
 };
 
 const Item = ({ obj, setShow }) => {
   return (
-    <div onClick={() => setShow(true)} className="ItemContainer">
-      <p className="CardTitle">{obj.date}</p>
-      <p className="CardTitle Purple">Overview:</p>
-      <p className="CardDesc">{obj.overview}</p>
+    <div onClick={() => setShow(true)} className='ItemContainer'>
+      <p className='CardTitle'>{obj.date}</p>
+      <p className='CardTitle Purple'>Overview:</p>
+      <p className='CardDesc'>{obj.overview}</p>
     </div>
   );
 };
@@ -54,15 +55,17 @@ function PatientHome() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const authContext = useContext(AuthContext);
+  console.log(authContext.user);
   return (
-    <div className="PatientHome">
-      <p className="Title">Appointments</p>
-      <div className="List">
-        {AppList.map((obj) => (
-          <Item setShow={handleShow} obj={obj}></Item>
+    <div className='PatientHome'>
+      <p className='Title'>Appointments</p>
+      <div className='List'>
+        {authContext.user.appointments.map((obj) => (
+          <Item handleShow={handleShow} obj={obj}></Item>
         ))}
       </div>
-      <Modal size="lg" show={show} onHide={handleClose}>
+      <Modal size='lg' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Appointment Details</Modal.Title>
         </Modal.Header>
@@ -70,10 +73,10 @@ function PatientHome() {
           <PatientForm />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant='secondary' onClick={handleClose}>
             Cancel
           </Button>
-          <Button className="ThemeButton" onClick={handleClose}>
+          <Button className='ThemeButton' onClick={handleClose}>
             Add
           </Button>
         </Modal.Footer>
