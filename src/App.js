@@ -1,10 +1,10 @@
-import logo from "./logo.svg";
+import { useEffect, useState } from "react";
+import { AuthProvider } from "./contexts/AuthContext";
 import "./App.css";
-import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-import { AuthProvider } from "./contexts/AuthContext";
-import { useEffect, useState } from "react";
+import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const fetchData = async () => {
   const url = "https://infinite-sands-83108.herokuapp.com/login";
@@ -32,7 +32,7 @@ const fetchData = async () => {
 };
 
 function App() {
-  const [screen, setScreen] = useState("auth");
+  const [screen, setScreen] = useState("patient");
 
   // useEffect(() => {
   //   fetchData();

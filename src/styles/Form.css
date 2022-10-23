@@ -5,11 +5,30 @@
   align-items: stretch;
   margin-left: 35%;
   margin-right: 35%;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 25vh;
+  margin-bottom: 25vh;
   padding: 63px 84px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: var(--light-grey);
+}
+
+.dictionaryForm {
+  background-color: var(--light-grey);
+  padding-bottom: 40px;
+}
+
+.DoctorForm {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.Row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.DictionaryRow{
+  padding: 0px 20px;
 }
 
 .Button {
@@ -43,6 +62,12 @@
 
 .InputField {
   height: 26px;
+  align-self: stretch;
+  display: flex;
+  flex-grow: 1;
+  border-width: 0.2px;
+  border-color: var(--light-grey);
+  padding-left: 8px;
 }
 
 .Label {
@@ -55,4 +80,27 @@
   letter-spacing: normal;
   text-align: left;
   color: var(--purple);
+  margin-top: 20px;
+}
+
+.GeneralNotes {
+  height: 200px;
+  border-width: 1px;
+  border-color: var(--grey);
+}
+
+.NavRow {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ThemeButton {
+  background-color: var(--purple) !important;
+}
+
+@media only screen and (max-width: 1840px) {
+  .Row {
+    flex-direction: column !important;
+  }
 }

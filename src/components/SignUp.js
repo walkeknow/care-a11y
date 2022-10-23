@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import Footer from "./Footer";
-import "../styles/SignUp.css";
+import "../styles/Form.css";
 import { AuthContext } from "../contexts/AuthContext";
 
 const Form = ({ setScreen }) => {
