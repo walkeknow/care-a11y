@@ -13,7 +13,7 @@ const BodyScreen = ({ screen, setScreen }) => {
     case "doctor":
       return <DoctorHome {...{ setAppointment, setScreen }} />;
     case "doctorReview":
-      return <DoctorReview {...{ appointment, setScreen }} />;
+      return <DoctorReview {...{ appointment, setAppointment, setScreen }} />;
     case "patient":
       return <PatientHome {...{ setScreen }} />;
     default:
