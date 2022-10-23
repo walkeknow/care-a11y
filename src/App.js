@@ -31,7 +31,7 @@ const fetchData = async () => {
 };
 
 function App() {
-  const [screen, setScreen] = useState("doctor");
+  const [screen, setScreen] = useState("patient");
 
   useEffect(() => {
     fetchData();

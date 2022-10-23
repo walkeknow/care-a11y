@@ -1,0 +1,53 @@
+.PatientHome {
+  min-height: 1100px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.Title {
+  font-family: Lato;
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--purple);
+  margin-top: 86px;
+}
+
+.List {
+  margin-top: 46px;
+}
+
+.CardTitle {
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--deep-purple);
+}
+
+.CardDesc {
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.Purple {
+  color: var(--purple);
+}
+
+.ItemContainer {
+  margin: 46px 0 46px 1px;
+  padding: 30px 38px 30px 35px;
+  border-radius: 20px;
+  background-color: var(--light-grey);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}

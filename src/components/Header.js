@@ -20,6 +20,19 @@ const RightBarDoctor = ({ setScreen, setOpen }) => {
   );
 };
 
+const RightBarPatient = ({ setScreen, setOpen }) => {
+  return (
+    <div className="NavRow">
+      <p className={"name"}>Welcome, Jeremy Jones</p>
+      <div className={"NavRow pill"}>
+        <p onClick={() => setScreen("auth")} className={"pillText link"}>
+          Logout
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const DictionaryForm = () => {
   return (
     <div className="dictionaryForm">
@@ -37,6 +50,16 @@ const DictionaryForm = () => {
   );
 };
 
+const HeaderRight = ({ screen, handleShow, setScreen }) => {
+  if (screen === "doctor") {
+    return <RightBarDoctor setOpen={handleShow} setScreen={setScreen} />;
+  } else if (screen === "patient") {
+    return <RightBarPatient setScreen={setScreen} />;
+  } else {
+    return <></>;
+  }
+};
+
 function Header({ screen, setScreen }) {
   const [show, setShow] = useState(false);
 
@@ -46,9 +69,7 @@ function Header({ screen, setScreen }) {
     <>
       <div className="header-background">
         <img src={Images.appLogo} className="logo" alt="CareA11y Logo" />
-        {screen === "doctor" && (
-          <RightBarDoctor setOpen={handleShow} setScreen={setScreen} />
-        )}
+        <HeaderRight {...{ screen, handleShow, setScreen }} />
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
