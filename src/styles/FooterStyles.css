@@ -1,0 +1,22 @@
+.Footer {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--deep-purple);
+  height: 103px;
+  width: auto;
+  padding: 14px 37px 23px 36px;
+}
+
+.HackGT {
+  font-family: Lato;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--white);
+}
