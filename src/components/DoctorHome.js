@@ -1,21 +1,16 @@
 import React from "react";
-import Footer from "./Footer";
-import "../styles/SignUp.css";
 
 const Form = ({ setScreen }) => {
-    
-
   return (
     <div className="Form">
-      <p className="Label">ID</p>
+      <p className="Label">Patient ID</p>
       <input className="InputField" />
-      <p className="Label">User Type</p>
-      <select className="InputField">
-        <option value="patient">Patient</option>
-        <option value="doctor">Doctor</option>
-      </select>
-      <p className="Label">Password</p>
+      <p className="Label">Diagnosis ID</p>
       <input className="InputField" />
+      <p className="Label">Procedure ID</p>
+      <input className="InputField" />
+      <p className="Label">General Notes</p>
+      <textarea className="InputField" />
       <button
         onClick={() => setScreen("doctor")}
         type="button"
@@ -27,7 +22,7 @@ const Form = ({ setScreen }) => {
   );
 };
 
-function SignUp(props) {
+function DoctorHome(props) {
   return (
     <div>
       <Form {...props} />
@@ -35,4 +30,4 @@ function SignUp(props) {
   );
 }
 
-export default SignUp;
+export default DoctorHome;

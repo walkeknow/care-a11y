@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  margin: 10% 35% 10% 35%;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   padding: 63px 84px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: var(--light-grey);
