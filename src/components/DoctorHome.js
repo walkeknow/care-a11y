@@ -26,8 +26,8 @@ const Form = ({ setAppointment, setScreen }) => {
       if (result.status) {
         console.log(result.data);
         setAppointment(result.data);
+        setScreen("doctorReview");
       }
-      setScreen("doctorReview");
     } catch (e) {
       console.log(e);
     }

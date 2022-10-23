@@ -27,42 +27,59 @@ const AppList = [
   },
 ];
 
-const PatientForm = () => {
+const PatientForm = ({ modalObj }) => {
   return (
     <div className='PatientForm'>
       <p className='Label'>Diagnosis Note</p>
-      <textarea readOnly='readOnly' className='GeneralNotes' />
+      <textarea
+        readOnly='readOnly'
+        className='GeneralNotes'
+        value={modalObj.transformed_general_notes}
+      />
       <p className='Label '>Procedure Note</p>
-      <textarea readOnly='readOnly' className='GeneralNotes' />
+      <textarea
+        readOnly='readOnly'
+        className='GeneralNotes'
+        value={modalObj.transformed_procedure_notes}
+      />
       <p className='Label '>General Note</p>
-      <textarea readOnly='readOnly' className='GeneralNotes' />
+      <textarea
+        readOnly='readOnly'
+        className='GeneralNotes'
+        value={modalObj.transformed_diagnosis_notes}
+      />
     </div>
   );
 };
 
-const Item = ({ obj, setShow }) => {
+const Item = ({ obj, setShow, setModalObj }) => {
+  const handleShow = () => {
+    setShow(true);
+    setModalObj(obj);
+  };
   return (
-    <div onClick={() => setShow(true)} className='ItemContainer'>
+    <div onClick={handleShow} className='ItemContainer'>
       <p className='CardTitle'>{obj.date}</p>
       <p className='CardTitle Purple'>Overview:</p>
-      <p className='CardDesc'>{obj.overview}</p>
+      <p className='CardDesc'>{obj.transformed_general_notes}</p>
     </div>
   );
 };
 
 function PatientHome() {
+  const authContext = useContext(AuthContext);
   const [show, setShow] = useState(false);
+  const [modalObj, setModalObj] = useState({});
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const authContext = useContext(AuthContext);
-  console.log(authContext.user);
+  // console.log(authContext.user);
   return (
     <div className='PatientHome'>
       <p className='Title'>Appointments</p>
       <div className='List'>
         {authContext.user.appointments.map((obj) => (
-          <Item handleShow={handleShow} obj={obj}></Item>
+          <Item setShow={handleShow} obj={obj} setModalObj={setModalObj}></Item>
         ))}
       </div>
       <Modal size='lg' show={show} onHide={handleClose}>
@@ -70,7 +87,7 @@ function PatientHome() {
           <Modal.Title>Appointment Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <PatientForm />
+          <PatientForm modalObj={modalObj} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={handleClose}>

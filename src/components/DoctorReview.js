@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const Form = ({ setScreen }) => {
+const Form = ({ appointment, setScreen }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
@@ -15,13 +15,22 @@ const Form = ({ setScreen }) => {
     <div className={"Form DoctorForm DoctorReview"}>
       <p className='FormTitle'>Review Details</p>
       <p className='Label'>Patient Name</p>
-      <input className='InputField' />
+      <input className='InputField' value={appointment.patient_name} />
       <p className='Label'>Diagnosis Note</p>
-      <input className='InputField' />
+      <input
+        className='InputField'
+        value={appointment.transformed_diagnosis_notes}
+      />
       <p className='Label'>Procedure Note</p>
-      <input className='InputField' />
+      <input
+        className='InputField'
+        value={appointment.transformed_procedure_notes}
+      />
       <p className='Label TextArea'>General Notes</p>
-      <textarea className='GeneralNotes' />
+      <textarea
+        className='GeneralNotes'
+        value={appointment.transformed_general_notes}
+      />
       <button onClick={() => handleShow()} type='button' className='Button'>
         Confirm
       </button>
