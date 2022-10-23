@@ -22,20 +22,14 @@ const Form = ({ setScreen }) => {
       const response = await fetch(url, settings);
       const result = await response.json();
       if (result.status) {
-        // authContext.setUser(result.data);
-        // authContext.setExpired(() => {
-        //   setTimeout(() => {
-        //     authContext.setUser({});
-        //     console.log(authContext.user);
-        //   }, 10000);
-        // });
+        console.log(result.data)
+        authContext.updateUser(result.data);
       }
-      // console.log(authContext.user);
     } catch (e) {
       console.log(e);
     }
 
-    authContext.updateUser({
+   /*  authContext.updateUser({
       name: "Jerry Driskill",
       role: "Doctor",
       appointments: {
@@ -51,11 +45,13 @@ const Form = ({ setScreen }) => {
         procedure_notes: "sample notes",
       },
     });
+    console.log('mock: ', authContext.user);
     authContext.updateExpired(() => {
       setTimeout(() => {
         authContext.updateUser({});
       }, 10000);
-    });
+    }); */
+    setScreen('doctor')
   };
 
   return (
@@ -87,6 +83,7 @@ const Form = ({ setScreen }) => {
       <p className='Label'>Password</p>
       <input
         className='InputField'
+        type={'password'}
         onChange={(e) =>
           setSignupInfo({ ...signupInfo, password: e.target.value })
         }
