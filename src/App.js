@@ -32,7 +32,7 @@ const fetchData = async () => {
 };
 
 function App() {
-  const [screen, setScreen] = useState("auth");
+  const [screen, setScreen] = useState("patient");
 
   // useEffect(() => {
   //   fetchData();

@@ -10,7 +10,7 @@ const Form = ({ setScreen }) => {
           <input placeholder="#" className="InputField" />
         </div>
         <div className="InputCol">
-          <p className="Label">Diagnosis ID</p>
+          <p className="Label">Diagnosis ICD</p>
           <input placeholder="#" className="InputField" />
         </div>
         <div className="InputCol">
