@@ -3,15 +3,18 @@ import SignUp from "./SignUp";
 import "../styles/Body.css";
 import DoctorHome from "./DoctorHome";
 import PatientHome from "./PatientHome";
+import DoctorReview from "./DoctorReview";
 
 const BodyScreen = ({ screen, setScreen }) => {
   switch (screen) {
     case "auth":
       return <SignUp {...{ setScreen }} />;
     case "doctor":
-      return <DoctorHome />;
+      return <DoctorHome {...{ setScreen }} />;
+    case "doctorReview":
+      return <DoctorReview {...{ setScreen }} />;
     case "patient":
-      return <PatientHome />;
+      return <PatientHome {...{ setScreen }} />;
     default:
       return <></>;
   }

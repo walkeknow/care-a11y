@@ -3,24 +3,25 @@ import React from "react";
 const Form = ({ setScreen }) => {
   return (
     <div className={"Form DoctorForm"}>
-     <div className="Row">
-          <div className="InputCol">
-              <p className="Label">Patient ID</p>
-              <input placeholder="#"  className="InputField" />
-          </div>
-          <div className="InputCol">
-              <p className="Label">Diagnosis ID</p>
-              <input placeholder="#" className="InputField" />
-          </div>
-          <div className="InputCol">
-              <p className="Label">Procedure ID</p>
-              <input placeholder="#"  className="InputField" />
-          </div>
-     </div>
-      <p className="Label">General Notes</p>
+      <p className="FormTitle">Appointment Details</p>
+      <div className="Row">
+        <div className="InputCol">
+          <p className="Label">Patient ID</p>
+          <input placeholder="#" className="InputField" />
+        </div>
+        <div className="InputCol">
+          <p className="Label">Diagnosis ID</p>
+          <input placeholder="#" className="InputField" />
+        </div>
+        <div className="InputCol">
+          <p className="Label">Procedure ID</p>
+          <input placeholder="#" className="InputField" />
+        </div>
+      </div>
+      <p className="Label TextArea">General Notes</p>
       <textarea className="GeneralNotes" />
       <button
-        onClick={() => setScreen("doctor")}
+        onClick={() => setScreen("doctorReview")}
         type="button"
         className="Button"
       >

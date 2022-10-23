@@ -8,6 +8,7 @@
   background-color: var(--deep-purple);
   min-height: 103px;
   padding: 14px 37px 23px 36px;
+
 }
 
 .HackGT {
@@ -20,4 +21,6 @@
   letter-spacing: normal;
   text-align: left;
   color: var(--white);
+  margin-bottom: 0px;
+  margin-top: 8px;
 }
