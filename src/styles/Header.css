@@ -7,8 +7,54 @@
   padding-top: 22px;
   padding-bottom: 22px;
   padding-left: 36px;
+  padding-right: 48px;
   object-fit: contain;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #fff;
   display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+}
+
+.pill {
+  background-color: var(--purple);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 0 34px;
+  border-radius: 40px;
+  padding: 10px 40px;
+  gap: 60px;
+}
+
+.name {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--purple);
+  margin-bottom: 0px !important;
+  margin-top: 8px;
+}
+
+.Row {
+  flex-direction: row;
+  display: flex !important;
+}
+
+.pillText {
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--white);
+  margin: 0;
+}
+
+.link:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
