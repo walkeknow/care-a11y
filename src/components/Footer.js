@@ -1,13 +1,13 @@
 import React from 'react'
 import Images from '../assets/images'
-import '../styles/FooterStyles.css'
+import '../styles/Footer.css'
 
 function Footer() {
   return (
     <div className='Footer'>
-        <img src={Images.carelonLogo} />
+        <img alt='carelon logo' src={Images.carelonLogo} />
         <p className='HackGT'>Made at HackGT with ♥</p>
-        <img src={Images.hexLabs} />
+        <img alt='hexLabs logo' src={Images.hexLabs} />
     </div>
   )
 }

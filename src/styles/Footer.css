@@ -1,11 +1,12 @@
+
 .Footer {
+  bottom: 0;
   display: flex;
   flex: 1;
   justify-content: space-between;
   align-items: center;
   background-color: var(--deep-purple);
-  height: 103px;
-  width: auto;
+  min-height: 103px;
   padding: 14px 37px 23px 36px;
 }
 

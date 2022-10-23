@@ -1,0 +1,7 @@
+.Body {
+    background: url('../assets/images/background.png');
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
